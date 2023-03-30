@@ -62,14 +62,18 @@ Console.WriteLine("======================= BEGIN PROBLEM 2 =====================
 */
 
     // Type your number and press enter
-    Console.WriteLine("Enter an integer:");
-    string input = Console.ReadLine();
+    Console.WriteLine("Enter an integer ");
 
-    bool isNumber = int.TryParse(input, out value);
+    string userInput = Console.ReadLine();
+
+    bool isNumber = int.TryParse(userInput, out value);
+
     if(!isNumber){
+        
         Console.WriteLine("Not an Integer");
+
     }else{
-         Console.WriteLine("Number entered is: " + input);
+         Console.WriteLine("Number entered is: " + userInput);
     }
 
     // Create a string variable and get user input from the keyboard and store it in the variable
@@ -110,6 +114,29 @@ Console.WriteLine("======================= BEGIN PROBLEM 3 =====================
 
 */
 
+    int[] arr = new int[5]; 
+    int i = 0; 
+
+    while (i < arr.Length) 
+    {
+        Console.Write("Enter an integer: ");
+
+        if (int.TryParse(Console.ReadLine(), out int num)){
+            arr[i] = num; 
+            i++; 
+        }
+        else{
+            Console.WriteLine("Invalid input Please enter an integer."); 
+        }
+    }
+
+Console.WriteLine("The contents of the array are");
+
+foreach (int num in arr) {
+    Console.WriteLine(num);
+}
+
+
 Console.WriteLine("======================= END PROBLEM 3 ==============================");
 
 Console.WriteLine("======================= BEGIN PROBLEM 4 ==============================");
@@ -131,6 +158,29 @@ Console.WriteLine("======================= BEGIN PROBLEM 4 =====================
 */
 
     string sentence = "All the apples in the Alexandria Orchard are ready to be picked.";
-    
+
+    foreach (char x in sentence){
+
+    switch (x)
+    {
+        case 'a':
+            newSentence = string.Concat(newSentence, "@");
+            break;
+        case 'o':
+            newSentence = string.Concat(newSentence, "0");
+            break;
+        case 'l':
+            newSentence = string.Concat(newSentence, "1");
+            break;
+        case 'e':
+           newSentence = string.Concat(newSentence, "3");
+            break;
+        default:
+            newSentence += x;
+            break;
+    }
+}
+
+Console.WriteLine(newSentence);
 
 Console.WriteLine("======================= END PROBLEM 4 ==============================");
